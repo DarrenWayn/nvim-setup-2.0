@@ -54,6 +54,9 @@ return packer.startup(function(use)
 	-- commenting with gr
 	use("numToStr/Comment.nvim")
 
+	-- commenting with jsx/tsx
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
 
