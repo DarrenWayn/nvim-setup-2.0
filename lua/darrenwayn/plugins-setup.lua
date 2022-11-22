@@ -111,6 +111,8 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use("nvim-treesitter/nvim-treesitter-context")
+
 	-- color rainbow brackets
 	use("p00f/nvim-ts-rainbow")
 
@@ -134,6 +136,14 @@ return packer.startup(function(use)
 	-- 		require("indent_blankline").setup({ filetype_exclude = { "dashboard" } })
 	-- 	end,
 	-- }
+
+	-- fold
+	use({
+		"anuvyklack/pretty-fold.nvim",
+		config = function()
+			require("pretty-fold").setup()
+		end,
+	})
 
 	-- Find and Replace
 	use("ray-x/sad.nvim")

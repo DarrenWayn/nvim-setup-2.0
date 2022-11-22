@@ -19,6 +19,41 @@ end
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
 
+local check_backspace = function()
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+end
+
+--   פּ ﯟ   some other good icons
+local kind_icons = {
+	Text = "",
+	Method = "m",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "",
+	Interface = "",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
+}
+-- find more here: https://www.nerdfonts.com/cheat-sheet
+
 vim.opt.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
@@ -35,6 +70,34 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 		["<C-e>"] = cmp.mapping.abort(), -- close completion window
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expandable() then
+				luasnip.expand()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			elseif check_backspace() then
+				fallback()
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
@@ -44,10 +107,38 @@ cmp.setup({
 		{ name = "path" }, -- file system paths
 	}),
 	-- configure lspkind for vs-code like icons
-	formatting = {
-		format = lspkind.cmp_format({
-			maxwidth = 50,
-			ellipsis_char = "...",
-		}),
+	--[[ formatting = { ]]
+	--[[ 	format = lspkind.cmp_format({ ]]
+	--[[ 		maxwidth = 50, ]]
+	--[[ 		ellipsis_char = "...", ]]
+	--[[ 	}), ]]
+	--[[ }, ]]
+	foformatting = {
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			-- Kind icons
+			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			vim_item.menu = ({
+				nvim_lsp = "[LSP]",
+				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
+				path = "[Path]",
+			})[entry.source.name]
+			return vim_item
+		end,
+	},
+	confirm_opts = {
+		behavior = cmp.ConfirmBehavior.Replace,
+		select = false,
+	},
+	window = {
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		},
+	},
+	experimental = {
+		ghost_text = false,
+		native_menu = false,
 	},
 })

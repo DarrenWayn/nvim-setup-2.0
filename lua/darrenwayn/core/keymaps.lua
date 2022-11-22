@@ -15,6 +15,7 @@ keymap.set("n", "<leader>nn", ":nohl<CR>")
 
 -- folding code
 keymap.set("n", "<leader>fo", ":set foldmethod=indent<CR>")
+keymap.set("n", "<leader>fm", ":set foldmethod=manual<CR>")
 keymap.set("n", "<leader>fl", ":set foldmethod=syntax<CR>")
 
 keymap.set("n", "<leader>w", ":set wrap<CR>")
