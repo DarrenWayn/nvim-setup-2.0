@@ -89,6 +89,9 @@ return packer.startup(function(use)
 	-- for better looing tabs
 	use({ "akinsho/nvim-bufferline.lua", tag = "v3.*", requires = "kyazdani42/nvim-web-devicons" })
 
+	-- for delete buffer tab
+	use("famiu/bufdelete.nvim")
+
 	-- color highlighter
 	use("norcalli/nvim-colorizer.lua")
 

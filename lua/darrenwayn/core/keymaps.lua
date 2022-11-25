@@ -65,7 +65,10 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>") -- file browser
 
 -- bufferline
 keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
-keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePev<cr>")
+keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
+
+-- delete bufferline
+keymap.set("n", "<leader>dl", "<cmd>Bdelete<cr>")
 
 -- live server
 keymap.set("n", "<leader>ls", "<cmd>LiveServer Start<cr>")
