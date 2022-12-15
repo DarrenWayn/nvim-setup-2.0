@@ -114,6 +114,7 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- sticky function
 	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- color rainbow brackets
@@ -147,6 +148,8 @@ return packer.startup(function(use)
 			require("pretty-fold").setup()
 		end,
 	})
+
+	use({ "nvim-lua/plenary.nvim", "0x100101/lab.nvim", run = "cd js && npm ci" })
 
 	-- Find and Replace
 	use("ray-x/sad.nvim")

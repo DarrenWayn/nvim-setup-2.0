@@ -14,9 +14,9 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>nn", ":nohl<CR>")
 
 -- folding code
-keymap.set("n", "<leader>fo", ":set foldmethod=indent<CR>")
+keymap.set("n", "<leader>fl", ":set foldmethod=indent<CR>")
 keymap.set("n", "<leader>fm", ":set foldmethod=manual<CR>")
-keymap.set("n", "<leader>fl", ":set foldmethod=syntax<CR>")
+keymap.set("n", "<leader>fo", ":set foldmethod=syntax<CR>")
 
 keymap.set("n", "<leader>w", ":set wrap<CR>")
 
@@ -72,7 +72,7 @@ keymap.set("n", "<leader>dl", "<cmd>Bdelete<cr>")
 
 -- live server
 keymap.set("n", "<leader>ls", "<cmd>LiveServer Start<cr>")
-keymap.set("n", "<leader>qq", "<cmd>LiveServer Stop <cr>")
+keymap.set("n", "<leader>lq", "<cmd>LiveServer Stop <cr>")
 
 -- auto save
 keymap.set("n", "<leader>n", "<cmd>:ASToggle <cr>")
@@ -87,3 +87,7 @@ keymap.set("n", "<leader>dfff", "<cmd>:h DiffviewFileHistory <cr>")
 
 -- Find and Replace Sadss
 keymap.set("n", "<leader>r", "<cmd>:Sad <cr>")
+
+-- Console Ninja by Lab
+keymap.set("n", "<leader>cl", "<cmd>:Lab code run <cr>")
+keymap.set("n", "<leader>cs", "<cmd>:Lab code stop <cr>")
