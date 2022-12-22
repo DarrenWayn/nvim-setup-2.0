@@ -88,6 +88,7 @@ keymap.set("n", "<leader>dfff", "<cmd>:h DiffviewFileHistory <cr>")
 -- Find and Replace Sadss
 keymap.set("n", "<leader>r", "<cmd>:Sad <cr>")
 
--- Console Ninja by Lab
-keymap.set("n", "<leader>cl", "<cmd>:Lab code run <cr>")
-keymap.set("n", "<leader>cs", "<cmd>:Lab code stop <cr>")
+-- Show size package budle
+keymap.set("n", "<leader>so", "<cmd>:ImportCost")
+keymap.set("n", "<leader>ss", "<cmd>:ImportCostSingle")
+keymap.set("n", "<leader>sc", "<cmd>:ImportCostClear")

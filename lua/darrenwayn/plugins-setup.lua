@@ -149,11 +149,11 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use({ "nvim-lua/plenary.nvim", "0x100101/lab.nvim", run = "cd js && npm ci" })
-
 	-- Find and Replace
 	use("ray-x/sad.nvim")
 	use("ray-x/guihua.lua")
+
+	use({ "yardnsm/vim-import-cost", run = "npm install --omit=dev" })
 
 	use("dinhhuy258/git.nvim")
 	if packer_bootstrap then
