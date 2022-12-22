@@ -153,7 +153,11 @@ return packer.startup(function(use)
 	use("ray-x/sad.nvim")
 	use("ray-x/guihua.lua")
 
+	-- show size package bundle
 	use({ "yardnsm/vim-import-cost", run = "npm install --omit=dev" })
+
+	-- console ninja
+	use({ "0x100101/lab.nvim", run = "cd js && npm ci" })
 
 	use("dinhhuy258/git.nvim")
 	if packer_bootstrap then

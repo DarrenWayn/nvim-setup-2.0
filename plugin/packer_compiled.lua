@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/guihua.lua",
     url = "https://github.com/ray-x/guihua.lua"
   },
+  ["lab.nvim"] = {
+    loaded = true,
+    path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/lab.nvim",
+    url = "https://github.com/0x100101/lab.nvim"
+  },
   ["live-server"] = {
     loaded = true,
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/live-server",
