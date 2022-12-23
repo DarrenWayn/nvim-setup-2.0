@@ -105,6 +105,7 @@ cmp.setup({
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
+		{ name = "lab.quick_data", keyword_lendth = 4 }, -- quick data using lab
 	}),
 	-- configure lspkind for vs-code like icons
 	--[[ formatting = { ]]

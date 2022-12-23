@@ -7,7 +7,7 @@ lab.setup({
 	code_runner = {
 		enabled = true,
 	},
-	queck_data = {
+	quick_data = {
 		enabled = true,
 	},
 })
