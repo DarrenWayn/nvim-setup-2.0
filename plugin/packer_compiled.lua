@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/bufdelete.nvim",
     url = "https://github.com/famiu/bufdelete.nvim"
   },
+  ["clipboard-image.nvim"] = {
+    loaded = true,
+    path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/clipboard-image.nvim",
+    url = "https://github.com/ekickx/clipboard-image.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -189,6 +194,11 @@ _G.packer_plugins = {
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["neosolarized.nvim"] = {
     loaded = true,
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
@@ -219,10 +229,20 @@ _G.packer_plugins = {
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-cursorline"] = {
+    loaded = true,
+    path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
+    url = "https://github.com/yamatsum/nvim-cursorline"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/Users/yoanclaudya/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

@@ -159,6 +159,18 @@ return packer.startup(function(use)
 	-- console ninja
 	use({ "0x100101/lab.nvim", run = "cd js && npm ci" })
 
+	-- paste Imgage
+	use("ekickx/clipboard-image.nvim")
+
+	-- smooth scroll
+	use("karb94/neoscroll.nvim")
+
+	-- scrollbar
+	use("petertriho/nvim-scrollbar")
+
+	-- highlight word when on point
+	use({ "yamatsum/nvim-cursorline" })
+
 	use("dinhhuy258/git.nvim")
 	if packer_bootstrap then
 		require("packer").sync()
