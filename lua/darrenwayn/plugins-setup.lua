@@ -144,9 +144,6 @@ return packer.startup(function(use)
 	-- fold
 	use({
 		"anuvyklack/pretty-fold.nvim",
-		config = function()
-			require("pretty-fold").setup()
-		end,
 	})
 
 	-- Find and Replace
@@ -169,7 +166,7 @@ return packer.startup(function(use)
 	use("petertriho/nvim-scrollbar")
 
 	-- highlight word when on point
-	use({ "yamatsum/nvim-cursorline" })
+	--[[ use({ "yamatsum/nvim-cursorline" }) ]]
 
 	use("dinhhuy258/git.nvim")
 	if packer_bootstrap then
